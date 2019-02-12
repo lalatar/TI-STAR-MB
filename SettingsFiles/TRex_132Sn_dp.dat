@@ -1,0 +1,116 @@
+################################################################################
+# Primary generator
+################################################################################
+PrimaryGenerator:	AngularDistribution
+LevelFile:		LevelFiles/21Ne_dp.dat
+AngularDistributionFile:	AngularDistributionFiles/132Sn_dp.dat
+
+
+# energy of the beam
+#BeamEnergy:		1320.0		in MeV
+BeamEnergy:		792.0		in MeV
+BeamWidth:		0.0		in mm
+ 
+ProjectileName:		21Ne
+ProjectileZ:		10 
+ProjectileA:		21
+
+TargetName:		2H
+TargetZ:		1
+TargetA:		2
+
+EjectileName:	22Ne
+EjectileZ:		10
+EjectileA:		22
+
+RecoilName:		1H
+RecoilZ:		1
+RecoilA:		1
+
+TargetMaterialName:	PE
+
+TargetThickness:	0.50		in mg/cm2
+TargetMaterialDensity:	0.92		in g/cm3
+
+TransferOrCoulexProbability:	1.0
+
+SimulateGammas:		1
+IncludeEnergyResolution:	0
+
+IncludeVacuumChamber:		1
+VacuumChamberType:		cylinder
+UseVisualizationCut:		0
+
+
+################################################################################
+# Detectors
+################################################################################
+UseFCDdeltaE:		1
+UseFCDErest:		1
+
+UseBCDdeltaE:		1
+UseBCDErest:		1
+
+UseFBarrelDeltaE:	1
+UseFBarrelErest:	1
+
+UseBBarrelDeltaE:	1
+UseBBarrelErest:	1
+
+
+FBarrelDeltaESinglesStripWidth:	0.390625 #3.125 #1.5625	#0.78125 #0.390625
+BBarrelDeltaESinglesStripWidth:	0.390625 #3.125 #1.5625	#0.78125 #0.390625
+
+FBarrelDeltaESinglesFoilThickness: 11.57	in um
+FCDDeltaESinglesFoilThickness: 11.57	in um
+
+
+BBarrelDeltaESingles.0.Thickness: 50  	in um
+BBarrelDeltaESingles.1.Thickness: 50  	in um
+BBarrelDeltaESingles.2.Thickness: 50  	in um
+BBarrelDeltaESingles.3.Thickness: 50  	in um
+
+
+NbOfMiniballClusters:		    8
+MiniballCluster.Rho.0:		110.  
+MiniballCluster.Rho.1:		110.  
+MiniballCluster.Rho.2:		110.  
+MiniballCluster.Rho.3:		110.  
+MiniballCluster.Rho.4:		110.  
+MiniballCluster.Rho.5:		110.  
+MiniballCluster.Rho.6:		110.  
+MiniballCluster.Rho.7:		110. 
+ 
+MiniballCluster.Theta.0:	125.
+MiniballCluster.Theta.5:	125.
+MiniballCluster.Theta.1:	67.
+MiniballCluster.Theta.6:	67.
+MiniballCluster.Theta.2:	67.
+MiniballCluster.Theta.4:	67.
+MiniballCluster.Theta.3:	125.
+MiniballCluster.Theta.7:	125.
+
+MiniballCluster.Phi.0:		320. 
+MiniballCluster.Phi.5:		220. 
+MiniballCluster.Phi.1:		320. 
+MiniballCluster.Phi.6:		220. 
+MiniballCluster.Phi.2:		40. 
+MiniballCluster.Phi.4:		140. 
+MiniballCluster.Phi.3:		40. 
+MiniballCluster.Phi.7:		140. 
+
+MiniballCluster.Spin.0:		0. 
+MiniballCluster.Spin.1:		0. 
+MiniballCluster.Spin.2:		0. 
+MiniballCluster.Spin.3:		0. 
+MiniballCluster.Spin.4:		0. 
+MiniballCluster.Spin.5:		0. 
+MiniballCluster.Spin.6:		0. 
+MiniballCluster.Spin.7:		0. 
+
+################################################################################
+# Visualization
+################################################################################
+SetColours:		1
+
+end

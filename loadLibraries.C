@@ -1,0 +1,40 @@
+{
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4processes.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4visHepRep.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4analysis.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4interfaces.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4particles.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4OpenGL.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4tracking.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4parmodels.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4graphics_reps.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4geometry.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4digits_hits.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4track.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4physicslists.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4RayTracer.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4run.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4materials.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4readout.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4persistency.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4modeling.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4zlib.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4error_propagation.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4gl2ps.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4global.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4Tree.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4GMocren.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4VRML.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4FR.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4visXXX.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4intercoms.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4event.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4clhep.so");
+	gSystem->Load("/opt/cern/geant/geant4.9.6.p03-install/lib64/libG4vis_management.so");
+
+	gSystem->Load("/opt/cern/root/root_v5.34.36/lib/libHist.so");
+
+	gSystem->Load("~/lib/libMiniBall.so");
+
+	gSystem->Load("~/geant4/tmp/Linux-g++/TRexGeant4/libTRexGeant4.so");
+}

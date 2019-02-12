@@ -1,0 +1,71 @@
+//thanks dhymers
+
+#include "HadronicStackingAction.hh"
+#include "G4ParticleTable.hh"
+#include "G4VProcess.hh"
+
+HadronicStackingAction::HadronicStackingAction()
+{
+	particleTable = G4ParticleTable::GetParticleTable();
+	
+	deuteronDef = nullptr;
+	electronDef = nullptr;
+
+        outfile.open("leila_deuteron6.dat", std::ofstream::app | std::ofstream::out);
+}
+
+HadronicStackingAction::~HadronicStackingAction()
+{
+
+outfile.close();
+
+}
+
+G4ClassificationOfNewTrack HadronicStackingAction::ClassifyNewTrack(const G4Track* track){
+G4ClassificationOfNewTrack classification;
+    
+    if (deuteronDef == nullptr){
+		deuteronDef = particleTable->FindParticle("deuteron");
+                 
+	}
+    if (electronDef == nullptr){
+	electronDef = particleTable->FindParticle("e-");
+    }
+    
+    classification = fUrgent;
+    
+    //do not simulate electrons, to speed up simulation
+    if(track->GetParticleDefinition() == deuteronDef){
+       
+   //G4cout << "################################ Tracking of deuterons ################################" << G4endl;
+ 
+//G4VProcess* creatorProcess = track-­>GetCreatorProcess();
+
+// char pName[1024];
+// strcpy(pName, track->GetCreatorProcess()->GetProcessName().c_str());
+ const G4String* processname = &(track->GetCreatorProcess()->GetProcessName());
+ //G4cout << "Process Name :  "<<processname<<G4endl;
+
+    if(track->GetParentID() == 1 && processname->compareTo("ScreenedElastic") == 0)// for beamin
+    //if(track->GetParentID() == 0) // for rutherford
+
+   //G4cout << " *** Parent ID "<< track->GetParentID() << " *** track ID: " << track->GetTrackID() << " *** particle name: " << track->GetDefinition()->GetParticleName() << " *** process: " << processname << " *** kinetic energy (keV)= " << track->GetKineticEnergy()/CLHEP::keV << " *** total energy (GeV)= " << track->GetTotalEnergy()/CLHEP::GeV<< " *** Momentum (MeV/c2)?: " <<track->GetMomentum().mag() << " *** Theta (radian) : " << track->GetMomentumDirection().theta()/CLHEP::deg << G4endl;// GetMomentum().mag2()
+
+ outfile << track->GetMomentumDirection().theta() / CLHEP::deg << " " << track->GetKineticEnergy() / CLHEP::keV << " " << track->GetTotalEnergy() / CLHEP::keV << std::endl;
+
+    }
+else if(track->GetParticleDefinition() == electronDef){
+ classification = fKill;
+}
+    return classification;
+}
+
+void HadronicStackingAction::NewStage()
+{}
+
+void HadronicStackingAction::PrepareNewEvent()
+{}
+
+//G4ThreeVector  momentumC =  aStep->GetPreStepPoint()->GetMomentumDirection();
+//G4double TheAlpha = momentumC.theta();
+//G4double stepl = aStep->GetStepLength();
